@@ -31,3 +31,7 @@ Respetá los términos de cada sitio y las leyes de protección de datos persona
 ## Notas
 
 - La extensión pide acceso a todos los sitios para poder consultarlos sin las restricciones de CORS. Es práctico para uso personal, pero no es una configuración apta para publicarla en la Chrome Web Store sin restringir los permisos.
+
+## Licencia
+
+Código bajo [licencia MIT](LICENSE). © 2026 Nahuel Emiliano Diaz.
