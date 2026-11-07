@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Email Scraper Pro",
+  "version": "2.1",
+  "description": "Extrae emails de sitios web sin limitaciones CORS",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Email Scraper Pro"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

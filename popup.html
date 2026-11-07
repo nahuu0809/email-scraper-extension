@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      margin: 0;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 18px;
+      margin: 0;
+      color: #fff;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      font-size: 12px;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 60px;
+      resize: vertical;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+    .btn:disabled {
+      background: #666;
+      cursor: not-allowed;
+    }
+    .btn-secondary {
+      background: #2196F3;
+    }
+    .btn-secondary:hover {
+      background: #1976D2;
+    }
+    .results {
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 15px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-size: 11px;
+    }
+    .email {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 8px;
+      margin: 2px 0;
+      border-radius: 3px;
+      word-break: break-all;
+    }
+    .loading {
+      text-align: center;
+      color: #ffeb3b;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📧 Email Scraper Pro</h1>
+  </div>
+  
+  <div class="input-group">
+    <label for="baseUrl">🌐 URL del sitio web:</label>
+    <input type="text" id="baseUrl" value="https://www.carrefour.com.ar" placeholder="https://ejemplo.com">
+  </div>
+  
+  <!-- Campos ocultos - configuración hardcodeada -->
+  <input type="hidden" id="paths" value="">
+  <input type="hidden" id="keywords" value="">
+  
+  <button id="startScraping" class="btn">🚀 Buscar Emails de RRHH</button>
+  <button id="scrapeCurrentPage" class="btn btn-secondary">📄 Analizar Página Actual</button>
+  
+  <!-- Estado de búsqueda persistente -->
+  <div id="searchStatus" style="display: none; text-align: center; margin: 10px 0; padding: 8px; background: rgba(255,193,7,0.2); border-radius: 4px;">
+    <div id="statusText" style="font-size: 12px; color: #ff6f00;"></div>
+    <button id="stopSearch" class="btn" style="padding: 6px 12px; font-size: 12px; background: #f44336; margin-top: 5px;">⏹️ Detener Búsqueda</button>
+  </div>
+  
+  <div id="results" class="results" style="display: none;">
+    <div id="loading" class="loading" style="display: none;">
+      <div>🔄 Procesando...</div>
+      <div id="progress"></div>
+    </div>
+    <div id="emailList"></div>
+    <div id="stats" class="stats"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

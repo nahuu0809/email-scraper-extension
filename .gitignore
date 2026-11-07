@@ -1,0 +1,19 @@
+# Node (por si se agrega tooling)
+node_modules/
+npm-debug.log*
+
+# paquetes de extensión y claves
+*.zip
+*.crx
+*.pem
+
+# secretos y logs
+.env
+.env.*
+*.log
+
+# editor y sistema
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
